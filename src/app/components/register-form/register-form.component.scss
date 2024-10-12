@@ -1,0 +1,22 @@
+
+
+label {
+    display: inline-block;
+    width: 25vw;
+
+    @media(min-width:330px) {
+        width: 30vw;
+        
+    }
+
+    @media(min-width:400px) {
+        width: 35vw;
+        
+    }
+
+    @media(min-width:500px) {
+        
+        
+    }
+}
+
