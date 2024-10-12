@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input, select {
+    border: none;
+    border-bottom: 2px solid #3498db; /* Linha cinza inicial */
+    outline: none;
+    // width: 100%;
+    font-size: 16px;
+    padding: 6px 5px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  input:focus {
+    border-bottom: 2px solid #329e3b; 
+  }
+  
+  input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }

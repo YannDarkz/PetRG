@@ -1,0 +1,132 @@
+<h2>Casdatro PetRG</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="personalData">
+        <h3>Dados Pessoais</h3>
+
+        <div>
+            <label for="name">Nome</label>
+            <input id="name" formControlName="name" type="text" />
+            <div
+                *ngIf="registerForm.get('personalData.name')?.invalid && registerForm.get('personalData.name')?.touched ">
+                Nome é obrigatório.
+            </div>
+        </div>
+
+        <div>
+            <label for="surname"> Apelido:</label>
+            <input type="text" id="surname" formControlName="surname">
+            <div
+                *ngIf="registerForm.get('personalData.surname')?.invalid && registerForm.get('personalData.surname')?.touched">
+                sobrenome ou apelido é obrigatório
+            </div>
+        </div>
+
+
+
+        <div>
+            <label for="email"> Email:</label>
+            <input type="email" id="email" formControlName="email">
+            <div
+                *ngIf="registerForm.get('personalData.email')?.invalid && registerForm.get('personalData.email')?.touched">
+                o email é obrigatório
+            </div>
+        </div>
+
+        <div>
+            <label for="cpf"> CPF:</label>
+            <input type="tel" id="cpf" formControlName="cpf" appMaskCpf>
+            <div *ngIf="registerForm.get('personalData.cpf')?.invalid && registerForm.get('personalData.cpf')?.touched">
+                CPF é obrigatório e deve conter 11 dígitos.
+            </div>
+        </div>
+
+        <div>
+            <label for="birth">Data de Nascimento</label>
+            <input type="date" formControlName="birth" id="birth">
+            <div
+                *ngIf="registerForm.get('personalData.birth')?.invalid && registerForm.get('personalData.birth')?.touched">
+                Data de Nascimento é Obrigatória.
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Segunda Etapa -->
+
+    <div formGroupName="petData">
+        <h3>Dados do Pet</h3>
+        <div>
+            <label for="petName">Nome do Pet</label>
+            <input type="text" formControlName="petName" id="petName" />
+            <div *ngIf="registerForm.get('petData.petName')?.invalid && registerForm.get('petData.petName')?.touched ">
+                Nome do Pet é obrigatório.
+            </div>
+        </div>
+
+        <div>
+            <label for="species">Espécie</label>
+            <input type="text" formControlName="species" id="species">
+            <div *ngIf="registerForm.get('petData.species')?.invalid && registerForm.get('petData.species')?.touched">
+                Espécie é obrigatória
+            </div>
+        </div>
+
+        <div>
+            <label for="birthPet">Data de Nascimento</label>
+            <input type="text" formControlName="birthPet" id="birthPet" />
+            <div
+                *ngIf="registerForm.get('petData.birthPet')?.invalid && registerForm.get('petData.birthPet')?.touched ">
+                Data de Nascimento é Obrigatória.
+            </div>
+        </div>
+
+        <div>
+            <label for="gender">Gênero:</label>
+            <select id="gender" formControlName="gender">
+                <option value="">Selecione</option>
+                <option value="masculino">Macho</option>
+                <option value="feminino">Fêmea</option>
+            </select>
+            <div *ngIf="registerForm.get('petData.gender')?.invalid && registerForm.get('petData.gender')?.touched">
+                Gênero é obrigatório.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Terceira etapa -->
+
+    <div formGroupName="passwordData">
+        <h3>Criação de senha</h3>
+        <div>
+            <label for="password">Senha</label>
+            <input type="password" formControlName="password" id="password">
+            <div
+                *ngIf="registerForm.get('passwordData.password')?.invalid && registerForm.get('passwordData.password')?.touched">
+                Senha é obrigatória e deve ter no mínimo 8 caracteres.
+            </div>
+        </div>
+
+        <div>
+            <label for="passwordConfirm">Senha</label>
+            <input type="password" formControlName="passwordConfirm" id="passwordConfirm">
+            <div
+                *ngIf="registerForm.get('passwordData.passwordConfirm')?.invalid && registerForm.get('passwordData.passwordConfirm')?.touched">
+                Confirmação de senha é obrigatória
+            </div>
+        </div>
+
+        <div>
+            <label for="termsOfUse">Aceito os Termos de Uso</label>
+
+            <input type="checkbox" formControlName="termsOfUse" id="termsOfUse" />
+            <div
+                *ngIf="registerForm.get('passwordData.termsOfUse')?.invalid && registerForm.get('passwordData.termsOfUse')?.touched">
+                Você deve aceitar os termos de uso.
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Cadastrar</button>
+</form>

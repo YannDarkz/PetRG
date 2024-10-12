@@ -1,27 +1,42 @@
-# PetRG
+## Produção de Componenter PetRg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+### cadastro de usuário && pet
+* O cadastro funcionará em 3 etapas para o usuário:
 
-## Development server
+* 1-  Dados para cadastro de usuário:
+    #### Prioridades iniciais:
+    - nome
+    - sobrenome ou apelido
+    - email
+    - cpf
+    - data de nascimento
+    #### Implementações de dados:
+    - telefone
+    - CEP
+    - Estado
+    - Cidade
+    - bairro
+    - endereço
+    - numero
+    - complemento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+* 2- Dados para cadastro do Pet
+    #### Prioridades iniciais:
+    - nome do pet
+    - espécie
+    - idade
+    - genero
+    #### Implementações de dados:
+    - raça
+    - cor
+    - nascimento
+    - animal-castrado(boolean)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* 3- Dados para criação do Password
+    - senha
+    - confimação de senha
+    - check-box termos de uso
+    - direcionamento para a tela de login
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
